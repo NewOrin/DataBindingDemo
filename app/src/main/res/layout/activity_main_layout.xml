@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.neworin.databindingdemo.User" />
+
+        <variable
+            name="handlers"
+            type="com.neworin.databindingdemo.EventHandler" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> handlers.onClickFriend(user.uname)}"
+            android:text="@{user.uname}"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> handlers.onClickFriend(user.ugender)}"
+            android:text="@{user.ugender}"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+    </LinearLayout>
+</layout>
